@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search engine</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+
+</head>
+
+<body>
+
+    <h1>Hadith Verse Search Engine
+    </h1>
+    <h2> Number of Hadiths : {{result.hits.total.value}} </h2>
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>Chapter</h1>
+                </th>
+                <th>
+                    <h1>Hadith</h1>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in result.hits.hits %}
+            <tr>
+
+
+                <td style="border-radius: 10px;cursor: pointer;">
+                    {{ item._source.source_arabic }}
+                </td>
+
+                <td style="text-align: center; border-radius: 30px;cursor: pointer;" id="hadith" name="hadith"
+                class="dropdown" >
+                    {{ item._source.hadith_arabic }}
+                <ul style="text-align: center; margin-right: 30px;">
+                        {{ item._source.chapter}}
+                    </ul>
+
+
+                </td>
+
+
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>

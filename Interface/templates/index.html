@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search engine</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+
+</head>
+
+<body>
+
+   
+    <div id="container" class="view-initial">
+        <div id="banner-bkgrd">
+
+            <div id="banner-overlay" class="expand-vertical">
+                <header id="search-container" class="flex-column flex-center">
+                    <div id="search-heading">
+                        <h1 style="color:rgb(158, 120, 17);font-family:verdana;">Quran Verse & Hadith Search Engine</h1>
+                        
+                    </div>
+                    <form id="search-form" class="flex-inline" action="" method="POST">
+
+                        <input id="search-input" type="text" autocomplete="off" tabindex="1" autocapitalize="off"
+                            autocorrect="off" name="search-query" placeholder="please enter a verse" />
+
+                        <input id="search-clear" type="button" tabindex="3" value="×">
+
+                        <input id="search-btn" type="submit" tabindex="2" class="fa fa-wikipedia-w fa-lg" name = "action" value="search quran"
+                            title="Search Quran" />
+
+                        <input id="search-btn" type="submit" tabindex="3" class="fa fa-wikipedia-w fa-lg" name = "action" value="search hadith"
+                            title="Search Hadith" />
+                    
+                    <!--
+                    <form id="package_form" action="" method="post">
+                        <input id="search-input" type="text" autocomplete="off" tabindex="1" autocapitalize="off"
+                            autocorrect="off" name="search-query" placeholder="please enter a verse" />
+                        <button type="submit" name="action" value="search_quran">Quran</button>
+                        <button type="submit" name="action" value="search_hadith">Hadith</button>
+                  
+                   </form>
+                -->   
+                   
+                    </form>
+                </header>
+            
+
+                
+            </div>
+            <!--/banner-overlay-->
+        </div>
+        <!--/banner-->
+        <main id="results">
+            <div id="cards" class="flex-row flex-wrap"></div>
+        </main>
+        <!--/results-->
+    </div>
+    <!--/container-->
+
+
+
+</body>
+
+</html>

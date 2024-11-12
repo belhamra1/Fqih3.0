@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Search engine</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+
+</head>
+
+<body>
+
+    <h1>Quran Verse Search Engine
+    </h1>
+    <h2> Number of ayat : {{result.hits.total.value}} </h2>
+
+    <table class="container">
+        <thead>
+            <tr>
+                <th>
+                    <h1>surah</h1>
+                </th>
+                <th>
+                    <h1>ayah</h1>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in result.hits.hits %}
+            <tr>
+
+
+                <td style="border-radius: 10px;cursor: pointer;">
+                    {{ item._source.sura_name }}
+                </td>
+
+                <td style="text-align: center; border-radius: 10px;cursor: pointer;" id="aya_chakl" name="aya_chakl"
+                    class="dropdown">
+                    {{item._source.aya_chakl }}
+                    <ul style="text-align: center; margin-right: 30px;">
+                        {{item._source.tafsir_aya}}
+                    </ul>
+                </td>
+
+                </td>
+
+
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+</body>
+
+</html>

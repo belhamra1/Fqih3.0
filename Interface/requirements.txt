@@ -1,0 +1,16 @@
+
+
+# Interface/code.py: 1
+Flask == 1.1.2
+
+# Interface/code.py: 6
+elasticsearch == 7.12.1
+
+# Interface/code.py: 4
+pyodbc == 4.0.30
+
+# Interface/code.py: 7
+requests == 2.22.0
+
+# Interface/code.py: 5
+tqdm == 4.51.0
